@@ -1,0 +1,370 @@
+/* Global
+--------------------------------------------- */
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@font-face {
+  font-family: "times-italics";
+  src: url("./times-new-roman-corsivo.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v14/1Ptug8zYS_SKggPNyCMIT4ttDfCmxA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v14/1Ptug8zYS_SKggPNyC0IT4ttDfA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body {
+  background: black;
+  font-family: Raleway, Arial, sans-serif;
+  color: #49277D;
+  scroll-behavior: smooth;
+  overflow: auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.parallax {
+  font-size: 200%;
+  width: 1000px;
+}
+
+.parallax::-webkit-scrollbar {
+  display: none;
+}
+
+.clearfix:after, .clearfix:before {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+/* Navbar
+--------------------------------------------- */
+
+.nav-bar {
+  height: 65px;
+  background: white;
+  z-index: 999;
+  position: fixed;
+  display: block;
+  width: 1000px;
+  padding: 25px 80px;
+  box-sizing: border-box;
+}
+
+.active {
+  color: #49277D !important;
+}
+
+.list {
+  float: right;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-item {
+  display: inline-block;
+  color: black;
+  color: #a1a1a1;
+  margin: 3px 10px;
+  font-size: 13px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "times-italics";
+  color: #49277D;
+  font-style: italic;
+  display: inline-block;
+}
+
+/* Parallax base styles
+--------------------------------------------- */
+
+.parallax {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 1px;
+  perspective: 1px;
+  scrollbar-width: none;
+  height: 100vh;
+}
+
+.parallax__group {
+  position: relative;
+  /* height: 500px; */
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.parallax__layer--base {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  z-index: 4;
+}
+
+.parallax__layer--back {
+  -webkit-transform: translateZ(-1px) scale(2);
+  transform: translateZ(-1px) scale(1);
+  z-index: 3;
+}
+
+/* Group1
+--------------------------------------------- */
+
+#group1 {
+  z-index: 2;
+  /* slide over group 2 */
+  height: 785px;
+}
+
+#group1 .parallax__layer--back {
+  background: url(http://csci571.com/hw/hw3/images/coffee2.jpg);
+  background-position: -600px -180px;
+  background-repeat: no-repeat;
+  background-size: 3280px 2000px;
+  height: 1570px;
+  width: 2000px;
+  top: -410px;
+  left: -500px;
+}
+
+.portfolio-wrapper {
+  background-color: white;
+  width: 450px;
+  height: 200px;
+  margin: auto;
+  margin-top: 258px;
+  padding: 40px;
+  color: #49277D;
+}
+
+.portfolio-image {
+  display: inline-block;
+  height: 100%;
+  width: 33.33%;
+  background: url(http://csci571.com/hw/hw3/images/face.jpg);
+  background-attachment: fixed;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  float: left;
+  background-position: 0px -18px;
+}
+
+.portfolio-content {
+  display: inline-block;
+  height: 100%;
+  float: left;
+  padding: 0 0 0 20px;
+}
+
+.portfolio-logo {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "times-italics";
+  color: #49277D;
+  font-style: italic;
+  margin: 0;
+}
+
+.portfolio-text {
+  font-size: 36px;
+  line-height: 36px;
+}
+
+.portfolio-text--large {
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.portfolio-line {
+  height: 5px;
+  background: #49277D;
+  width: 60px;
+  margin: 43px 0;
+}
+
+.text {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* Group2
+--------------------------------------------- */
+
+#group2 {
+  z-index: 5;
+  height: 733px;
+  color: white;
+}
+
+.sub-section-3 {
+  float: left;
+  min-width: 273.33px;
+  height: 733px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.sub-section-3--color1 {
+  background: #4F98B9;
+}
+
+.sub-section-3--color2 {
+  background: #49277D;
+}
+
+.sub-section-3--color3 {
+  background: #9A69C2;
+}
+
+.heading {
+  margin: 4px 0;
+  margin: 4px 0;
+  font-size: x-large;
+}
+
+/* Group3
+--------------------------------------------- */
+
+#group3 {
+  height: 687px;
+  z-index: 3;
+  /* slide over group 2 and 4 */
+}
+
+#group3 .parallax__layer--back {
+  background: url(http://csci571.com/hw/hw3/images/coffee1.jpg);
+  background-repeat: no-repeat;
+  background-position: -720px 80px;
+  background-size: 3400px 1920px;
+  height: 2000px;
+  width: 3000px;
+  top: -440px;
+  left: -500px;
+}
+
+/* Group4
+--------------------------------------------- */
+
+#group4 {
+  z-index: 5;
+  height: 491px;
+}
+
+#group4 .parallax__layer--base {
+  background: #49277D;
+  color: white;
+  padding: 110px;
+}
+
+.s4-text {
+  font-size: 36px;
+}
+
+.s4-heading {
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Group5
+--------------------------------------------- */
+
+#group5 {
+  z-index: 5;
+  height: 491px;
+}
+
+#group5 .parallax__layer--base {
+  background: white;
+  color: #49277D;
+}
+
+.sub-section-2 {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+.form {
+  padding: 115px 25% 100px 0px;
+}
+
+.form-input {
+  display: block;
+  border: 1px solid #49277D;
+  width: 100%;
+  padding: 6px;
+  margin: 6px 0;
+  color: #49277D;
+  box-sizing: border-box;
+}
+
+.textarea {
+  resize: none;
+  height: 100px;
+}
+
+.form-input::placeholder {
+  color: #49277D;
+}
+
+.btn {
+  padding: 10px 20px;
+  background: #49277D;
+  color: white;
+  font-style: italic;
+  font-family: 'times-italics';
+  display: inline-block;
+  float: right;
+  font-size: 16px;
+}
+
+.s5-content-wrapper {
+  padding: 80px 30px 100px 25%;
+}
+
+.s5-text {
+  font-size: 36px;
+}
+
+.s5-heading {
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.s5-address {
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.copyright {
+  margin-top: 115px;
+  font-size: 13px;
+}
